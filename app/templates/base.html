@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The title of our application is defined here -->
+    {% block title %}
+        {% if title %}
+            <title>{{ title }} - Tailwind</title>
+        {% else %}
+            <title>Tailwind Demo</title>
+        {% endif %}
+    {% endblock %}
+
+    <!-- Link all style files here -->
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    {% endblock %}
+
+</head>
+<body>
+    <!-- Contents of all our pages will go here -->
+    {% block content %}
+    <div class="container mx-auto">
+        {% block app_content %}{% endblock %}
+    </div>
+    {% endblock %}
+
+    <!-- All scripts will go here -->
+    {% block scripts %}
+
+    {% endblock %}
+</body>
+</html>
